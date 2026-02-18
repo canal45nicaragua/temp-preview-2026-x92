@@ -1,0 +1,32 @@
+<section id="oracion-section" class="prayer-section">
+    <div class="prayer-container">
+        <div class="prayer-header">
+            <i class="fas fa-hands-praying"></i>
+            <h2>Pedidos de Oración</h2>
+            <hr class="accent-line center">
+            <p>Escribe tu petición y nuestro equipo intercederá por ti.</p>
+        </div>
+        
+        <form class="prayer-form" id="prayerForm" action="https://formspree.io/f/TU_ID_AQUÍ" method="POST">
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Tu Nombre Completo" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="location" placeholder="Ciudad / País">
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Tu Correo (para contactarte)" required>
+            </div>
+            <div class="form-group">
+                <textarea name="message" rows="4" placeholder="¿Cuál es tu motivo de oración?" required></textarea>
+            </div>
+            
+            <input type="hidden" name="_subject" value="Nuevo Pedido de Oración - TV45 Nicaragua">
+            <input type="hidden" name="_next" value="https://canal45nicaragua.github.io/temp-preview-2026-x92/">
+
+            <button type="submit" class="btn-submit">
+                <i class="fas fa-paper-plane"></i> Enviar Petición
+            </button>
+        </form>
+    </div>
+</section>

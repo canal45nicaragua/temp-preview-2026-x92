@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /* Estilos críticos para que el video ocupe todo el iframe sin bordes */
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #000; }
+        video { width: 100%; height: 100%; object-fit: cover; }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+</head>
+<body>
+    <video id="video" autoplay muted loop playsinline poster="resources/tv45nicaragua.png"></video>
+
+    <script>
+        const video = document.getElementById('video');
+        const videoSrc = 'https://hdbox.chunklistv.com/effeed34-2449-44ad-8eba-7bdce7c399bf';
+
+        if (Hls.isSupported()) {
+            const hls = new Hls();
+            hls.loadSource(videoSrc);
+            hls.attachMedia(video);
+        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+            video.src = videoSrc;
+        }
+    </script>
+</body>
+</html>

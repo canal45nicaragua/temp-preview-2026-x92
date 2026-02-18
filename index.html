@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <title>TV45 Nicaragua | Una Señal de Esperanza</title>
+    
+    <link rel="icon" type="image/png" href="resources/tv45nicaraguaico.png">
+    
+    <meta name="description" content="TV45 Nicaragua: Medio televisivo adventista con programación de fe, salud y familia las 24 horas.">
+    <meta property="og:title" content="TV45 Nicaragua | Una Señal de Esperanza">
+    <meta property="og:description" content="Programación cristiana para la restauración física y espiritual.">
+    <meta property="og:image" content="resources/tv45nicaragua.png">
+    <meta property="og:type" content="website">
+
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header id="mainHeader">
+        <div class="logo-box">
+            <a href="index.html">
+                <img src="resources/tv45nicaragua.png" alt="Logotipo TV45 Nicaragua" width="180" height="auto">
+            </a>
+        </div>
+        <nav aria-label="Navegación principal">
+            <a href="#nosotros"><i class="fas fa-users" aria-hidden="true"></i> Nosotros</a>
+            <a href="#oracion-section"><i class="fas fa-hands-praying" aria-hidden="true"></i> Oración</a>
+            <a href="#donaciones-section"><i class="fas fa-heart" aria-hidden="true"></i> Donaciones</a>
+            <a href="#galeria"><i class="fas fa-images" aria-hidden="true"></i> Galería</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="video-wrapper">
+                <iframe 
+                    src="player.html" 
+                    title="Reproductor en vivo TV45" 
+                    allow="autoplay; fullscreen" 
+                    loading="lazy"
+                    style="width: 100%; height: 100%; border: none;">
+                </iframe>
+            </div>
+            
+            <div class="hero-content">
+                <h1>Una señal de esperanza</h1>
+                <a href="https://hdbox.chunklistv.com/effeed34-2449-44ad-8eba-7bdce7c399bf" class="btn-live" rel="noopener" target="_blank">
+                    <i class="fas fa-play" aria-hidden="true"></i> Ver señal en vivo
+                </a>
+            </div>
+            
+            <div class="live-status">
+                <span class="status-item">
+                    <span class="dot"></span> 
+                    <strong>EN VIVO:</strong> <span id="current-show">Sintonizando...</span>
+                </span>
+                <span class="divider" aria-hidden="true">|</span>
+                <span class="status-item">
+                    <i class="fas fa-clock" style="color: var(--accent-gold);"></i> 
+                    <strong>HORA NICARAGUA:</strong> <span id="nica-clock">--:--</span>
+                </span>
+                <span class="divider" aria-hidden="true">|</span>
+                <span class="status-item">
+                    <strong>SIGUIENTE:</strong> <span id="next-show">Cargando...</span>
+                </span>
+            </div>
+        </section>
+
+        <section id="nosotros" class="about-section">
+            <div class="about-container">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&q=80&w=1000" alt="Estudio de TV45 Nicaragua" loading="lazy">
+                </div>
+                <div class="about-text">
+                    <h2>¿QUÉ ES TV45 NICARAGUA?</h2>
+                    <hr class="accent-line">
+                    <p>Es un medio televisivo laico que apoya el Ministerio de la Iglesia Adventista del Séptimo Día. Los contenidos que emitimos son palabra de Dios, que ayudan a la restauración de la imagen del creador en cada persona.</p>
+                    
+                    <h3>Nuestro Propósito</h3>
+                    <p>Brindamos servicio las 24 horas del día. El enfoque de <strong>TV45 NICARAGUA</strong> es presentar una programación que conforte a cada persona que esté sufriendo, física o mentalmente.</p>
+                </div>
+            </div>
+        </section>
+
+        <div id="oracion-section">
+            <div id="dynamic-prayer-container"></div>
+        </div>
+
+        <div id="donaciones-section">
+            <div id="dynamic-donation-container"></div>
+        </div>
+
+        <div id="galeria">
+            <div id="dynamic-gallery-container"></div>
+        </div>
+    </main>
+
+    <div id="lightbox" class="lightbox" role="dialog" aria-hidden="true">
+        <span class="close-lightbox" aria-label="Cerrar imagen">&times;</span>
+        
+        <button class="prev-photo" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+        <button class="next-photo" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
+        
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Vista ampliada">
+            <p id="lightbox-caption"></p> </div>
+    </div>
+
+    <button onclick="scrollToTop()" id="scrollTopBtn" class="scroll-top-btn" aria-label="Volver arriba">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <a href="https://wa.me/50557857125?text=Hola%20TV45%20Nicaragua,%20me%20gustaría%20obtener%20más%20información." 
+       class="whatsapp-float" 
+       target="_blank" 
+       rel="noopener" 
+       aria-label="Chatea con nosotros en WhatsApp">
+         <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer class="main-footer">
+        <div class="footer-col">
+            <h3>TV45 NICARAGUA</h3>
+            <p>Llevando la palabra de Dios a cada rincón del mundo.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/tv45nicaragua" target="_blank" rel="noopener" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.youtube.com/@TV45-NICARAGUA" target="_blank" rel="noopener" aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://wa.me/50557857125" target="_blank" rel="noopener" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="footer-col">
+            <h3>CONTACTO RÁPIDO</h3>
+            <address style="font-style: normal;">
+                <p>
+                    <a href="https://maps.google.com/?q=Pali+San+Judas+Managua" target="_blank" rel="noopener" class="address-link">
+                        <i class="fas fa-map-marker-alt"></i> 
+                        <span>Palí San Judas, 1c al Sur. Managua.</span>
+                    </a>
+                </p>
+                <p><a href="tel:+50557857125"><i class="fas fa-phone-alt"></i> +505 5785-7125</a></p>
+                <p><a href="mailto:contacto@tv45nicaragua.com"><i class="fas fa-envelope"></i> contacto@tv45nicaragua.com</a></p>
+            </address>
+        </div>
+
+        <div class="footer-col">
+            <h3>HORARIOS DE ATENCIÓN</h3>
+            <div class="schedule-container">
+                <div class="schedule-item">
+                    <i class="fas fa-calendar-check"></i>
+                    <span><strong>Domingo:</strong> 08:00 AM - 04:00 PM</span>
+                </div>
+                <div class="schedule-item">
+                    <i class="fas fa-clock"></i>
+                    <span><strong>Lun a Vie:</strong> 08:00 AM - 05:00 PM</span>
+                </div>
+                <div class="schedule-item closed">
+                    <i class="fas fa-door-closed"></i>
+                    <span><strong>Sábado:</strong> Cerrado</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© <span id="year"></span> Todos los derechos reservados <strong>TV45 Nicaragua</strong></p>
+        </div>
+    </footer>
+
+    <script src="script/script.js"></script>
+</body>
+</html>
